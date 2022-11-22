@@ -188,3 +188,106 @@ cychan@cychan-virtual-machine:~$curl https://api.blockcypher.com/v1/bcy/testt
   "last_fork_height": 550381,
   "last_fork_hash": "000020bb31b8fd6791aed2b0942d0399a26941cdcab5d6dea32ff34661ff835a"
 }
+
+test if Alice redeems:
+cychan@cychan-virtual-machine:~$ /bin/python3 /home/cychan/git/Cross-chain-Atomic-Swap/swap.py
+Alice swap tx (BTC) created successfully!
+201 Created
+{
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "42ab086ea83afbefe09a378125c3485d671e94f7734f7b4b1b237007f19bdc4e",
+    "addresses": [
+      "mxyqC1Q23nEXHM4fFT5nZnVYHnJ4kdJ1cu"
+    ],
+    "total": 155908,
+    "fees": 10000,
+    "size": 263,
+    "vsize": 263,
+    "preference": "low",
+    "relayed_by": "221.238.245.41",
+    "received": "2022-11-22T12:12:22.248435284Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "07dbcb9ad05568f0329857630ba41902d95877d369f420090ea197735fd83f7a",
+        "output_index": 4,
+        "script": "483045022100eb404ec864366198b2048aefcf9a8ac5bb86d943d4f97263d90b245050a6b914022009103ca5faefbc8cfc667a9d42b63eed13a6af245f7e17fe92ba35b8308d9d1a0121036c5d0daf7178cf53dc1fe6ba183528666a7ced51f4559d2c9d334353de10e6ba",
+        "output_value": 165908,
+        "sequence": 4294967295,
+        "addresses": [
+          "mxyqC1Q23nEXHM4fFT5nZnVYHnJ4kdJ1cu"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 2399385
+      }
+    ],
+    "outputs": [
+      {
+        "value": 155908,
+        "script": "2102771272e82a9e9db6a2559a95d145146acde6169441374c0965dcda8784fb4966ad6321036c5d0daf7178cf53dc1fe6ba183528666a7ced51f4559d2c9d334353de10e6baac67a914853b775079232503df966e626618e1d388a957208768",
+        "addresses": null,
+        "script_type": "unknown"
+      }
+    ]
+  }
+}
+Bob swap tx (BCY) created successfully!
+201 Created
+{
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "0ba0c6ce1bdda2e65b474ca1e245595aea2b053de64e095cc016e2fe09a1e921",
+    "addresses": [
+      "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+    ],
+    "total": 89000,
+    "fees": 10000,
+    "size": 263,
+    "vsize": 263,
+    "preference": "low",
+    "relayed_by": "221.238.245.41",
+    "received": "2022-11-22T12:12:44.747155801Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 1,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "b59fe5e4447bf457f4304d150a1e2e55c4afed275919a543b2ce0557b768c008",
+        "output_index": 0,
+        "script": "483045022100d5eed6fd7a954c3dc7f7cdf7baf78eb98f8cb1901fe1ca28bf697c0ebe1b0acb022072d23198e2db8a87a1b7360932852540b2c5504abd01cd963ad9d932df21467b01210382697a4518380f44c9f65e9f4d0857f6f8a7f7e382c36f6f1c4344fcda2bd051",
+        "output_value": 99000,
+        "sequence": 4294967295,
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 556020
+      }
+    ],
+    "outputs": [
+      {
+        "value": 89000,
+        "script": "21036280f7357972fd8f2e0c2241d8ecdb9de1ed62d3a7a3cd4c8f1a2ea87b971889ad63210382697a4518380f44c9f65e9f4d0857f6f8a7f7e382c36f6f1c4344fcda2bd051ac67a914853b775079232503df966e626618e1d388a957208768",
+        "addresses": null,
+        "script_type": "unknown"
+      }
+    ]
+  }
+}
+Sleeping for 20 minutes to let transactions confirm...
+Alice redeem from swap tx (BCY) created successfully!
+400 Bad Request
+{"error": "Error validating transaction: Transaction 2d99b24972f774fd8085da509148896d30d5b0eb5902006ba6f79f53f8645e33 orphaned, missing reference 21e9a109fee216c05c094ee63d052bea5a5945e2a14c475be6a2dd1bcec6a00b."}
+Bob redeem from swap tx (BTC) created successfully!
+400 Bad Request
+{"error": "Error validating transaction: Transaction f46bd2a44299d990820e9b595f9e3b2cad6cf924ff1c59a12709f3169ea32729 orphaned, missing reference 4edc9bf10770231b4b7b4f73f7941e675d48c32581379ae0effb3aa86e08ab42."}
+cychan@cychan-virtual-machine:~$ 

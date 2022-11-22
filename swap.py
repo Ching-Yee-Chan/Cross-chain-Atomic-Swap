@@ -78,10 +78,10 @@ bob_amount_to_send      = 0.00099
 ##################################################這部分需要每次測試前更改##################################################
 # Get current block height (for locktime) in 'height' parameter for each blockchain (and put it into swap.py):
 #  curl https://api.blockcypher.com/v1/btc/test3
-btc_test3_chain_height  = 2407631
+btc_test3_chain_height  = 2407681
 
 #  curl https://api.blockcypher.com/v1/bcy/test
-bcy_test_chain_height   = 556029
+bcy_test_chain_height   = 556486
 ##########################################################################################################################
 
 # Parameter for how long Alice/Bob should have to wait before they can take back their coins
@@ -89,10 +89,10 @@ bcy_test_chain_height   = 556029
 alice_locktime = 5
 bob_locktime = 3
 
-tx_fee = 0.00001
+tx_fee = 0.0001
 
 broadcast_transactions = False
-alice_redeems = False
+alice_redeems = True
 
 #
 #
@@ -154,6 +154,13 @@ def atomic_swap(broadcast_transactions=False, alice_redeems=True):
 
     if broadcast_transactions:
         bob.broadcast_BCY(bob_swap_tx)
+
+    # from bitcoin.core import Hash160, Hash, b2x, CMutableTransaction
+    # print(b2x(alice_swap_tx.serialize()))
+    # print(b2x(alice_swap_tx.GetTxid()))
+    # print(b2x(alice_swap_tx.GetHash()))
+    # print(b2x(bob_swap_tx.serialize()))
+    # print(b2x(bob_swap_tx.GetTxid()))
 
     if broadcast_transactions:
         print('Sleeping for 20 minutes to let transactions confirm...')
