@@ -1,0 +1,190 @@
+Alice BTC testnet3:
+Private key: cVwUALtpLf19uM1Z4qJYpicEkfaojjDuC4w89bTxv4tWzRPJyMDw
+Address: mxyqC1Q23nEXHM4fFT5nZnVYHnJ4kdJ1cu
+
+Bob BTC testnet3:
+Private key: cP2i2R1TVnEyaJyH7w3jK3uoXBqUg7CfHi5w7eai23VapTh1Qu
+Address: mw14EiRgaCdXHPZebeornU1JQM8x8W4kmr
+
+Alice blockcypher:
+cychan@cychan-virtual-machine:~$ curl -X POST https://api.blockcypher.com/v1/bcy/test/addrs?token=a6a9729a09c24da2b02491d9d521f5f3
+{
+  "private": "ce045457839339b726864a9ed629185fcc585334401e19e11e2a7f8ecc16986d",
+  "public": "036280f7357972fd8f2e0c2241d8ecdb9de1ed62d3a7a3cd4c8f1a2ea87b971889",
+  "address": "BsWFgdrexgdxdRfB7Ft46DWd9GthHspGoW",
+  "wif": "BvEVziJk1cxD88NyPzEtxANSbrXaS7DAekcBHoujCkY1xvQzMg7T"
+}
+
+Bob blockcypher:
+cychan@cychan-virtual-machine:~$ curl -X POST https://api.blockcypher.com/v1/bcy/test/addrs?token=a6a9729a09c24da2b02491d9d521f5f3
+{
+  "private": "657e63afcd0363ca0ab1fee81c72f4e505e0e238ec175fb1c6f749e91c11268f",
+  "public": "0382697a4518380f44c9f65e9f4d0857f6f8a7f7e382c36f6f1c4344fcda2bd051",
+  "address": "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE",
+  "wif": "BrjKb3goYoqiD3MTYEg5yhNTn6EbswUtRKXneJ7KyZpu5avq29Uh"
+}
+
+Bob get BCY: 
+cychan@cychan-virtual-machine:~$ curl -d '{"address": "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE", "amount": 1000000}' https://api.blockcypher.com/v1/bcy/test/faucet?token=a6a9729a09c24da2b02491d9d521f5f3
+{
+  "tx_ref": "f7b94aa0b13f058e7ec0287e7e4c75aa80ec4034da19d81c60b64ac910ba317c"
+}
+
+Bob split coins:
+201 Created
+{
+  "tx": {
+    "block_height": -1,
+    "block_index": -1,
+    "hash": "b59fe5e4447bf457f4304d150a1e2e55c4afed275919a543b2ce0557b768c008",
+    "addresses": [
+      "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+    ],
+    "total": 990000,
+    "fees": 10000,
+    "size": 498,
+    "vsize": 498,
+    "preference": "low",
+    "relayed_by": "117.131.219.22",
+    "received": "2022-11-22T04:23:04.822960885Z",
+    "ver": 1,
+    "double_spend": false,
+    "vin_sz": 1,
+    "vout_sz": 10,
+    "confirmations": 0,
+    "inputs": [
+      {
+        "prev_hash": "f7b94aa0b13f058e7ec0287e7e4c75aa80ec4034da19d81c60b64ac910ba317c",
+        "output_index": 0,
+        "script": "483045022100c1500efa901d15201bbd2d54fa247b786870f5e44b6c3cdc3c7ac8a7b8d46ca702202288b54e11877d1760577d2ccb0d82469322bd1304c74239498c737609e530f001210382697a4518380f44c9f65e9f4d0857f6f8a7f7e382c36f6f1c4344fcda2bd051",
+        "output_value": 1000000,
+        "sequence": 4294967295,
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash",
+        "age": 555996
+      }
+    ],
+    "outputs": [
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      },
+      {
+        "value": 99000,
+        "script": "76a91430eaf0187e4a7f3fd8680ee071ffb2a4200ba18988ac",
+        "addresses": [
+          "BwawTuk6cqEWJ8iSekTJMu7bMZwHMPnqtE"
+        ],
+        "script_type": "pay-to-pubkey-hash"
+      }
+    ]
+  }
+}
+
+get blockheight of BTC testnet3:
+cychan@cychan-virtual-machine:~$ curl https://api.blockcypher.com/v1/btc/test3
+{
+  "name": "BTC.test3",
+  "height": 2407631,
+  "hash": "000000000000820df5e0c5fd8e069fb64729f4f670d57e016f56c33c0228d0c7",
+  "time": "2022-11-22T04:27:30.774436491Z",
+  "latest_url": "https://api.blockcypher.com/v1/btc/test3/blocks/000000000000820df5e0c5fd8e069fb64729f4f670d57e016f56c33c0228d0c7",
+  "previous_hash": "00000000000036ee8dc14a0cbde75b5fbfe4a8bf6e26e559020b567e91c7b250",
+  "previous_url": "https://api.blockcypher.com/v1/btc/test3/blocks/00000000000036ee8dc14a0cbde75b5fbfe4a8bf6e26e559020b567e91c7b250",
+  "peer_count": 168,
+  "unconfirmed_count": 30,
+  "high_fee_per_kb": 48783,
+  "medium_fee_per_kb": 30734,
+  "low_fee_per_kb": 18890,
+  "last_fork_height": 2405780,
+  "last_fork_hash": "00000000ae9d8c35a8cbc5bfeda3418c294530ca4912923256fe5935d49d6e70"
+}
+
+get blockheight of BCY testnet:
+cychan@cychan-virtual-machine:~$curl https://api.blockcypher.com/v1/bcy/testt
+{
+  "name": "BCY.test",
+  "height": 556029,
+  "hash": "00002fd241dad9a39730f5d500c186c1cc412a1d905c5210772d9fcdff114a26",
+  "time": "2022-11-22T04:32:24.092784244Z",
+  "latest_url": "https://api.blockcypher.com/v1/bcy/test/blocks/00002fd241dad9a39730f5d500c186c1cc412a1d905c5210772d9fcdff114a26",
+  "previous_hash": "00001a6c678b09c645a6c862a94cdd110e0f77f05d6c4a0aa04d217e4270047c",
+  "previous_url": "https://api.blockcypher.com/v1/bcy/test/blocks/00001a6c678b09c645a6c862a94cdd110e0f77f05d6c4a0aa04d217e4270047c",
+  "peer_count": 0,
+  "unconfirmed_count": 0,
+  "high_fee_per_kb": 89054,
+  "medium_fee_per_kb": 64317,
+  "low_fee_per_kb": 45000,
+  "last_fork_height": 550381,
+  "last_fork_hash": "000020bb31b8fd6791aed2b0942d0399a26941cdcab5d6dea32ff34661ff835a"
+}

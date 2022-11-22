@@ -68,27 +68,28 @@ import bob
 # TODO: Fill in all of these fields
 #
 
-alice_txid_to_spend     = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" 
-alice_utxo_index        = None
-alice_amount_to_send    = None
+alice_txid_to_spend     = "07dbcb9ad05568f0329857630ba41902d95877d369f420090ea197735fd83f7a" 
+alice_utxo_index        = 4
+alice_amount_to_send    = 0.00165908
 
-bob_txid_to_spend       = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+bob_txid_to_spend       = "b59fe5e4447bf457f4304d150a1e2e55c4afed275919a543b2ce0557b768c008"
 bob_utxo_index          = 0
-bob_amount_to_send      = 0.01
-
+bob_amount_to_send      = 0.00099
+##################################################這部分需要每次測試前更改##################################################
 # Get current block height (for locktime) in 'height' parameter for each blockchain (and put it into swap.py):
 #  curl https://api.blockcypher.com/v1/btc/test3
-btc_test3_chain_height  = 1439691
+btc_test3_chain_height  = 2407631
 
 #  curl https://api.blockcypher.com/v1/bcy/test
-bcy_test_chain_height   = 2062296
+bcy_test_chain_height   = 556029
+##########################################################################################################################
 
 # Parameter for how long Alice/Bob should have to wait before they can take back their coins
 ## alice_locktime MUST be > bob_locktime
 alice_locktime = 5
 bob_locktime = 3
 
-tx_fee = 0.001
+tx_fee = 0.00001
 
 broadcast_transactions = False
 alice_redeems = False

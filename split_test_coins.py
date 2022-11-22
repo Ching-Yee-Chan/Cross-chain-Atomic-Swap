@@ -32,12 +32,12 @@ if __name__ == '__main__':
     # TODO: set these parameters correctly
     #
 
-    my_private_key = CBitcoinSecret('657e63afcd0363ca0ab1fee81c72f4e505e0e238ec175fb1c6f749e91c11268f')
+    my_private_key = CBitcoinSecret.from_secret_bytes(x('657e63afcd0363ca0ab1fee81c72f4e505e0e238ec175fb1c6f749e91c11268f'))
 
     my_public_key = my_private_key.pub
     my_address = P2PKHBitcoinAddress.from_pubkey(my_public_key)
 
-    amount_to_send = None # amount of BTC in the output you're splitting minus fee
+    amount_to_send = 0.01-0.0001 # amount of BTC in the output you're splitting minus fee
     txid_to_spend = (
         'f7b94aa0b13f058e7ec0287e7e4c75aa80ec4034da19d81c60b64ac910ba317c')
     utxo_index = 0
